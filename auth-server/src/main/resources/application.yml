@@ -1,0 +1,38 @@
+server:
+    port: 8081
+    host: localhost
+
+spring:
+    application:
+        name: auth-server
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/user?serverTimezone=UTC&characterEncoding=UTF-8
+        username: root
+        password: 1234
+        initialization-mode: always
+    jpa:
+        database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+        open-in-view: false
+        show-sql: true
+        hibernate:
+            format_sql: true
+            ddl-auto: none
+
+eureka:
+    client:
+        service-url:
+            defaultZone: http://localhost:8761/eureka/
+            registerWithEureka: true
+            fetchRegistry: true
+
+security:
+    oauth2:
+        resource:
+            jwt:
+                key-value: jwt_secret_key
+        client:
+            client-id: auth_id
+            client-secret: auth_secret
+            refresh-token-validity-seconds: 240 # 4 hour
+            access-token-validity-seconds: 43200 # 30 days

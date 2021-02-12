@@ -1,0 +1,55 @@
+server:
+  port: 8090
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+spring:
+  application:
+    name: msa-gateway
+
+zuul:
+  sensitiveHeaders: 'Cookie,Set-Cookie'
+  ignoredServices: '*'
+  #라우팅 설정
+  # user-server 라우팅
+  routes:
+    user:
+      path: /api/user/**
+      service-id: user-server
+      stripPrefix: false
+    signup:
+      path: /api/signup/**
+      service-id: user-server
+      stripPrefix: false
+  # user-server 라우팅 끝
+  # auth-server 라우팅
+    oauth:
+      path: /oauth/**
+      service-id: auth-server
+      stripPrefix: false
+  # auth-server 라우팅 끝
+  #라우팅 설정 끝
+
+#timeout setting
+user-server:
+  ribbon:
+    ConnectTimeout: 15000
+    ReadTimeout: 15000
+auth-server:
+  ribbon:
+    ConnectTimeout: 15000
+    ReadTimeout: 15000
+
+
+#security
+security:
+  oauth2:
+    client:
+      client-id: auth_id
+      client-secret: auth_secret
+    resource:
+      jwt:
+        key-value: jwt_secret_key

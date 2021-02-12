@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/signup.css">
+    <script src="js\form-validation.js" type="text/javascript" charset="UTF-8"></script>
+    <title>Soulmates</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Soulmates</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item active">
+              <a class="nav-link" aria-current="page" href="#">Home</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <main class="container">
+      <div class="container" style= "position: absolute; top: 10%;">
+        <main>
+          <div class="py-5 text-center" style= "position: absolute; left: 37%;">
+            <h2>[Soulmates] 회원가입 페이지 </h2>
+            <p class="lead"></p>
+          </div>
+          <div class="row g-3" style="position: absolute; left: 33%; max-width: 1000px; min-width: 800px; margin-top: 100px;">
+            <div class="col-md-7 col-lg-8">
+              <form class="needs-validation" novalidate>
+                <div class="row g-3">
+                  <div class="col-sm-6">
+                    <label for="firstName" class="form-label">First name (성)</label>
+                    <input type="text" class="form-control" id="firstName" placeholder="(예시) 김" value="" required>
+                    <div class="invalid-feedback">
+                      Valid first name is required.
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <label for="lastName" class="form-label">Last name</label>
+                    <input type="text" class="form-control" id="lastName" placeholder="(예시) 현수" value="" required>
+                    <div class="invalid-feedback">
+                      Valid last name is required.
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <label for="email" class="form-label">Email <span class="text-muted"></span></label>
+                    <input type="email" class="form-control" id="email" placeholder="you@example.com">
+                    <div class="invalid-feedback">
+                      Please enter a valid email address
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <label for="address" class="form-label">password</label>
+                    <input type="text" class="form-control" id="address" placeholder="비밀번호" required>
+                    <div class="invalid-feedback">
+                      Please enter your Password
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <label for="address" class="form-label">password [재확인] </label>
+                    <input type="text" class="form-control" id="address" placeholder="비밀번호 재확인" required>
+                    <div class="invalid-feedback">
+                      Please enter your Password
+                    </div>
+                  </div>
+                <hr class="my-4">
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="same-address">
+                  <label class="form-check-label" for="same-address">개인정보 수집 이용동의 (필수)</label>
+                </div>
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="save-info">
+                  <label class="form-check-label" for="save-info">마케팅 활용 및 광고성 정보 수신 동의 (선택)</label>
+                </div>
+                <hr class="my-4">
+                <button class="w-100 btn btn-primary btn-lg" type="submit">회원가입</button>
+              </form>
+            </div>
+          </div>
+        </main>
+      </div>
+    </main>
+  </body>
+</html>

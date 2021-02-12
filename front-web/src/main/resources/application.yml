@@ -1,0 +1,7 @@
+server:
+    port: 8030
+
+#spring:
+ # web:
+  #  resources:
+   #   static-locations: classpath:/static/
